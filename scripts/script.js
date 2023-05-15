@@ -1,14 +1,21 @@
 const url = "https://dslist-production-ef68.up.railway.app"
 
 const gamesContainer = document.querySelector("#games-container")
+const gameListContainer = document.querySelector("#game-list-container")
+
+const urlSearchParams = new URLSearchParams(window.location.search)
+const gameId = urlSearchParams.get("id")
+
+const gamePage = document.querySelector("#game")
+const gameContainer = document.querySelector("#game-container")
 
 async function findAllGames(){
     
     const response = await fetch(url+"/games")
-    console.log(response);
+    
 
     const data = await response.json();
-    console.log(data);
+    
 
     data.map((game)=>{
         const div = document.createElement("div");
@@ -51,3 +58,46 @@ async function findAllGames(){
 }
 
 findAllGames();
+
+async function findAllGameLists(){
+    
+    const response = await fetch(url+"/lists")
+    const data = await response.json();
+
+    console.log(data)
+
+    data.map((list =>{
+        const div = document.createElement("div");
+        const name = document.createElement("h2");
+        const link = document.createElement("a");
+
+        div.setAttribute("class", "games__container")
+        div.setAttribute("class", "card-body")
+
+        name.innerText = list.name;
+        name.setAttribute("class", "titulo__game")
+
+        link.innerText = "Abrir";
+        
+        link.setAttribute("href", `list.html?id=${list.id}`);
+
+        div.appendChild(name)
+        div.appendChild(link)
+
+        gameListContainer.appendChild(div)
+
+    }))
+}
+
+findAllGameLists();
+
+async function findGameById(id){
+
+    const response = await fetch(`${url+"/games/"}/${id}`)
+
+    const data = await response.json()
+
+    console.log(data)
+}
+
+findGameById()

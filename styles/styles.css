@@ -11,6 +11,33 @@ body {
     padding: 15px;
 }
 
+.row {
+    margin: 0;
+}
+
+
+#nav-container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#navbar-links a{
+    color: #C0C0C0;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding: 1rem .8rem;
+}
+
+.nav-itens{
+    display: flex;
+    
+}
+
+li {
+    font-size: 14px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -54,6 +81,6 @@ body {
     text-align: center;
 }
 
-.gamelist__card{
+.gamelist__card {
     padding: 10px;
 }
