@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="./scripts/script.js"></script>
+    <title>Novo Game</title>
+
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">DS List</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">Games</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Listas de Games</a>
+                        </li>
+
+
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success"
+                        onclick="novoGame()" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <div class="text-center container">
+            <form class="games__container">
+                <div class="mb-3">
+                    <label class="form-label">Título</label>
+                    <input class="form-control" id="title">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Ano</label>
+                    <input type="number" class="form-control" id="year">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Gênero</label>
+                    <input class="form-control" id="genre">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Plataformas</label>
+                    <input class="form-control" id="platforms">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Pontuação</label>
+                    <input type="number" class="form-control" id="score">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">URL de Imagem</label>
+                    <input class="form-control" id="imgUrl">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Descrição curta</label>
+                    <input class="form-control" id="shortDescription">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Descrição longa</label>
+                    <input class="form-control" id="longDescription">
+                </div>
+
+                <button id="novo-game-botao" type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

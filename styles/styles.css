@@ -1,0 +1,59 @@
+:root {
+    --branco-primario: #FFFFFF;
+    --cinza-secundario: #C0C0C0;
+    --botao-azul: #167bf7;
+    --cor-de-fundo: #00030C;
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+    color: var(--branco-primario);
+    padding: 15px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.games__container {
+    background-color: var(--cinza-secundario);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+.titulo__game {
+    font-size: 1.7rem;
+    color: #00030C;
+    font-weight: bold;
+}
+
+.ano__game {
+    font-size: 1.3rem;
+    color: #00030C;
+    font-weight: 700;
+
+}
+
+.descricao__game {
+    font-size: 1.1rem;
+    color: #00030C;
+    padding: 3px;
+    font-weight: 500;
+
+}
+
+.card-body {
+    border: #00030C 4px solid;
+    text-align: center;
+}
+
+.gamelist__card{
+    padding: 10px;
+}
