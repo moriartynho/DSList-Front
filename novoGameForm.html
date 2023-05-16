@@ -17,81 +17,75 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">DS List</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="container" id="nav-container">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">DS List</a>
+                    <div class="" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                
+                            <li class="nav-item">
+                                <a class="nav-link" href="./index.html">Games</a>
+                            </li>
+    
+                            
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="./index.html">Games</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Listas de Games</a>
-                        </li>
-
-
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success"
-                        onclick="novoGame()" type="submit">Search</button>
-                    </form>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./novoGameForm.html">Novo Game</a>
+                            </li>
+    
+    
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
     <main>
 
         <div class="text-center container">
-            <form class="games__container">
+            <form id="game-form" class="games__container">
                 <div class="mb-3">
-                    <label class="form-label">Título</label>
-                    <input class="form-control" id="title">
+                    <label for="title" class="form-label" >Título</label>
+                    <input id="title" name="title"  class="form-control" id="title" required>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Ano</label>
-                    <input type="number" class="form-control" id="year">
+                    <label for="year" class="form-label">Ano</label>
+                    <input name="year" type="number" class="form-control" id="year" required>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Gênero</label>
-                    <input class="form-control" id="genre">
+                    <label for="genre" class="form-label">Gênero</label>
+                    <input name="genre" class="form-control" id="genre" required>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Plataformas</label>
-                    <input class="form-control" id="platforms">
+                    <label for="platforms" class="form-label">Plataformas</label>
+                    <input name="platforms" class="form-control" id="platforms" required>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Pontuação</label>
-                    <input type="number" class="form-control" id="score">
+                    <label for="score" class="form-label">Pontuação</label>
+                    <input name="score" type="number" class="form-control" id="score" required>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">URL de Imagem</label>
-                    <input class="form-control" id="imgUrl">
+                    <label for="imgUrl" class="form-label">URL de Imagem</label>
+                    <input name="img" class="form-control" id="imgUrl" required>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Descrição curta</label>
-                    <input class="form-control" id="shortDescription">
+                    <textarea class="form-control" id="shortDescription" required></textarea>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Descrição longa</label>
-                    <input class="form-control" id="longDescription">
+                    <textarea class="form-control" id="longDescription" required></textarea>
                 </div>
 
-                <button id="novo-game-botao" type="submit" class="btn btn-primary">Enviar</button>
+               <input type="submit" value="Enviar">
             </form>
         </div>
     </main>

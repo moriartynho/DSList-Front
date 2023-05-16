@@ -9,6 +9,18 @@ const gameId = urlSearchParams.get("id")
 const gamePage = document.querySelector("#game")
 const gameContainer = document.querySelector("#game-container")
 
+const gameForm = document.querySelector("#game-form")
+const titleInput = document.querySelector("#title")
+const yearInput = document.querySelector("#year")
+const genreInput = document.querySelector("#genre")
+const platformsInput = document.querySelector("#platforms")
+const scoreInput = document.querySelector("#score")
+const imgUrlInput = document.querySelector("#imgUrl")
+const shortDescriptionInput = document.querySelector("#shortDescription")
+const longDescriptionInput = document.querySelector("#longDescription")
+
+
+
 async function findAllGames() {
 
     const response = await fetch(url + "/games")
@@ -147,4 +159,43 @@ if (!gameId) {
     findAllGameLists();
 } else {
     findGameById(gameId);
+}
+
+
+
+gameForm.addEventListener("submit", (e)=>{
+    e.preventDefault()
+
+    let game = {
+        title: titleInput.value,
+        year: yearInput.value,
+        genre: genreInput.value,
+        platforms: platformsInput.value,
+        score: scoreInput.value,
+        imgUrl: imgUrlInput.value,
+        shortDescription: shortDescriptionInput.value,
+        longDescription: longDescriptionInput.value
+    };
+
+    game = JSON.stringify(game)
+
+
+    postGame(game);
+
+
+})
+
+async function postGame(game){
+
+    const response = await fetch(`${url}/games`, {
+        method: "POST",
+        body: game,
+        headers: {
+            "Content-type": "application/json",
+        },
+    });
+
+    const data = await response.json();
+    console.log(data)
+
 }
