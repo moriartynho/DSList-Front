@@ -13,6 +13,7 @@ body {
 
 .row {
     margin: 0;
+    display: block;
 }
 
 
@@ -83,4 +84,15 @@ li {
 
 .gamelist__card {
     padding: 10px;
+}
+
+.game__container{
+    background-color: var(--cinza-secundario);
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.img-game{
+    width: 30%;
 }

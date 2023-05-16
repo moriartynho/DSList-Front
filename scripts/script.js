@@ -9,15 +9,15 @@ const gameId = urlSearchParams.get("id")
 const gamePage = document.querySelector("#game")
 const gameContainer = document.querySelector("#game-container")
 
-async function findAllGames(){
-    
-    const response = await fetch(url+"/games")
-    
+async function findAllGames() {
+
+    const response = await fetch(url + "/games")
+
 
     const data = await response.json();
-    
 
-    data.map((game)=>{
+
+    data.map((game) => {
         const div = document.createElement("div");
         const title = document.createElement("h2");
         const year = document.createElement("h2");
@@ -43,7 +43,7 @@ async function findAllGames(){
         shortDescription.setAttribute("class", "descricao__game")
 
         link.innerText = "Abrir";
-        
+
         link.setAttribute("href", `game.html?id=${game.id}`);
 
         div.appendChild(title)
@@ -59,14 +59,14 @@ async function findAllGames(){
 
 findAllGames();
 
-async function findAllGameLists(){
-    
-    const response = await fetch(url+"/lists")
+async function findAllGameLists() {
+
+    const response = await fetch(url + "/lists")
     const data = await response.json();
 
     console.log(data)
 
-    data.map((list =>{
+    data.map((list => {
         const div = document.createElement("div");
         const name = document.createElement("h2");
         const link = document.createElement("a");
@@ -78,7 +78,7 @@ async function findAllGameLists(){
         name.setAttribute("class", "titulo__game")
 
         link.innerText = "Abrir";
-        
+
         link.setAttribute("href", `list.html?id=${list.id}`);
 
         div.appendChild(name)
@@ -91,13 +91,60 @@ async function findAllGameLists(){
 
 findAllGameLists();
 
-async function findGameById(id){
+async function findGameById(id) {
 
-    const response = await fetch(`${url+"/games/"}/${id}`)
+    const response = await fetch(`${url + "/games"}/${id}`)
 
-    const data = await response.json()
+    const game = await response.json();
 
-    console.log(data)
+    console.log(game)
+
+
+
+    const div = document.createElement("div");
+    const title = document.createElement("h1")
+    const imgUrl = document.createElement("img")
+    const genre = document.createElement("h4")
+    const year = document.createElement("h4")
+    const platforms = document.createElement("h4")
+    const score = document.createElement("h4")
+    const longDescription = document.createElement("p")
+
+    div.setAttribute("class", "game__container")
+    div.setAttribute("class", "img-thumbnail")
+    div.setAttribute("class", "img-fluid")
+    div.setAttribute("class", "card-body")
+
+    title.innerText = game.title
+    title.setAttribute("style", "color: black; font-weight:600")
+
+    imgUrl.setAttribute("src", game.imgUrl)
+    imgUrl.setAttribute("class", "img-game")
+
+    year.innerText = "Ano: "+game.year
+    year.setAttribute("style", "color: black; font-weight:600")
+    genre.innerText = "Gênero: \n"+game.genre
+    genre.setAttribute("style", "color: black; font-weight:600;margin-top:10px")
+    platforms.innerText = "Plataformas: \n"+ game.platforms
+    platforms.setAttribute("style", "color: black; font-weight:600")
+    score.innerText = "Pontuação: \n"+game.score
+    score.setAttribute("style", "color: black; font-weight:600")
+    longDescription.innerText = game.longDescription
+    longDescription.setAttribute("style", "color: black; font-weight:600;justify-content:justify")
+
+    gameContainer.appendChild(title)
+    gameContainer.appendChild(imgUrl)
+    gameContainer.appendChild(genre)
+    gameContainer.appendChild(year)
+    gameContainer.appendChild(platforms)
+    gameContainer.appendChild(score)
+    gameContainer.appendChild(longDescription)
+
+
 }
 
-findGameById()
+if (!gameId) {
+    findAllGameLists();
+} else {
+    findGameById(gameId);
+}
