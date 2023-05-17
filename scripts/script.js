@@ -135,11 +135,11 @@ async function findGameById(id) {
 
     year.innerText = "Ano: "+game.year
     year.setAttribute("style", "color: black; font-weight:600")
-    genre.innerText = "Gênero: \n"+game.genre
+    genre.innerText = "Gênero: "+game.genre
     genre.setAttribute("style", "color: black; font-weight:600;margin-top:10px")
-    platforms.innerText = "Plataformas: \n"+ game.platforms
+    platforms.innerText = "Plataformas: "+ game.platforms
     platforms.setAttribute("style", "color: black; font-weight:600")
-    score.innerText = "Pontuação: \n"+game.score
+    score.innerText = "Pontuação: "+game.score
     score.setAttribute("style", "color: black; font-weight:600")
     longDescription.innerText = game.longDescription
     longDescription.setAttribute("style", "color: black; font-weight:600;justify-content:justify")
@@ -197,5 +197,6 @@ async function postGame(game){
 
     const data = await response.json();
     console.log(data)
+    window.location.href = "index.html"
 
 }
