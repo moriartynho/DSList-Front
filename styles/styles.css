@@ -135,4 +135,8 @@ form textarea {
         max-width: 100%;
         height: auto;
     }
+
+    .card-body {
+        width: 100%;
+    }
 }
