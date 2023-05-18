@@ -123,15 +123,15 @@ async function findGameById(id) {
     const longDescription = document.createElement("p")
 
     div.setAttribute("class", "game__container")
-    div.setAttribute("class", "img-thumbnail")
     div.setAttribute("class", "img-fluid")
+    
     div.setAttribute("class", "card-body")
 
     title.innerText = game.title
     title.setAttribute("style", "color: black; font-weight:600")
 
     imgUrl.setAttribute("src", game.imgUrl)
-    imgUrl.setAttribute("class", "img-game")
+    imgUrl.setAttribute("class", "img-fluid")
 
     year.innerText = "Ano: "+game.year
     year.setAttribute("style", "color: black; font-weight:600")

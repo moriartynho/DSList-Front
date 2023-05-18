@@ -22,17 +22,17 @@ body {
     padding-bottom: 0;
 }
 
-#navbar-links a{
+#navbar-links a {
     color: #C0C0C0;
 }
 
-.navbar-expand-lg .navbar-nav .nav-link{
+.navbar-expand-lg .navbar-nav .nav-link {
     padding: 1rem .8rem;
 }
 
-.nav-itens{
+.nav-itens {
     display: flex;
-    
+
 }
 
 li {
@@ -70,7 +70,7 @@ li {
 
 }
 
-.card-body{
+.card-body {
     width: 70%;
 }
 
@@ -91,40 +91,48 @@ li {
     padding: 10px;
 }
 
-.game__container{
+.game__container {
     background-color: var(--cinza-secundario);
     gap: 10px;
     justify-content: center;
     padding: 10px;
 }
 
-.img-thumbnail{
-    max-width:350px;
-    max-height:300px;
+.img-thumbnail {
+    max-width: 350px;
+    max-height: 300px;
     width: auto;
     height: auto;
+
 }
 
-.img-game{
+.img-game {
     width: 30%;
 }
 
-form{
+form {
     width: 90%;
 }
 
-form div{
+form div {
     display: flex;
     flex-direction: column;
     color: black;
     font-weight: 600;
 }
 
-form label{
+form label {
     margin-bottom: .3em;
 }
 
-form input, 
-form textarea{
+form input,
+form textarea {
     padding: 5px;
+}
+
+@media(max-width:768px) {
+    .img-thumbnail {
+        max-width: 100%;
+        height: auto;
+    }
 }
